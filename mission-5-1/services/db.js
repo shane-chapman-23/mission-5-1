@@ -9,4 +9,13 @@ async function connectDB() {
   }
 }
 
-module.exports = {connectDB};
+const auctionSchema = new mongoose.Schema({
+  title: String,
+  description: String,
+  start_price: Number,
+  reserve_price: Number,
+});
+
+const Auction = mongoose.model("Auction", auctionSchema);
+
+module.exports = {connectDB, Auction};

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "testdb": "node ./bin/cli.js testdb"
+    "seed": "node ./bin/cli.js seed",
+    "delete": "node ./bin/cli.js delete"
   },
   "keywords": [],
   "author": "",

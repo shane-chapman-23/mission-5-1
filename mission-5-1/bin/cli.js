@@ -1,15 +1,20 @@
 #!/usr/bin/env node
 
-const {connectDB} = require("../services/db");
+const seedData = require("../commands/seed");
+const deleteData = require("../commands/delete");
 
-const command = process.argv[2]; // e.g. "seed", "delete", or "testdb"
+const command = process.argv[2]; // e.g. "seed" or "delete"
 
-if (command === "testdb") {
-  connectDB().then(() => {
-    console.log("Connection test finished");
-    process.exit();
-  });
-} else {
-  console.log("Usage: cli.js <testdb|seed|delete>");
-  process.exit(1);
+switch (command) {
+  case "seed":
+    seedData();
+    break;
+
+  case "delete":
+    deleteData();
+    break;
+
+  default:
+    console.log("Usage: npm run <seed|delete>");
+    process.exit(1);
 }
