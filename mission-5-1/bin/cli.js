@@ -1,20 +1,21 @@
 #!/usr/bin/env node
-
+const {program} = require("commander");
 const seedData = require("../commands/seed");
 const deleteData = require("../commands/delete");
 
-const command = process.argv[2]; // e.g. "seed" or "delete"
+program
+  .name("auction")
+  .version("1.0.0")
+  .description("CLI tool to manage auction data");
 
-switch (command) {
-  case "seed":
-    seedData();
-    break;
+program
+  .command("seed")
+  .description("Seeds auction data into a database")
+  .action(seedData);
 
-  case "delete":
-    deleteData();
-    break;
+program
+  .command("delete")
+  .description("Deletes auction data from the database")
+  .action(deleteData);
 
-  default:
-    console.log("Usage: npm run <seed|delete>");
-    process.exit(1);
-}
+program.parse(process.argv);

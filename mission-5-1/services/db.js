@@ -14,6 +14,7 @@ const auctionSchema = new mongoose.Schema({
   description: String,
   start_price: Number,
   reserve_price: Number,
+  test_data: Boolean,
 });
 
 const Auction = mongoose.model("Auction", auctionSchema);

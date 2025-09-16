@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "seed": "node ./bin/cli.js seed",
-    "delete": "node ./bin/cli.js delete"
+  "bin": {
+    "auction": "./bin/cli.js"
   },
   "keywords": [],
   "author": "",

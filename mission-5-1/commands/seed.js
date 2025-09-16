@@ -8,7 +8,7 @@ async function seedData() {
     await Auction.insertMany(auctions);
     console.log("Seed data inserted");
   } catch (err) {
-    console.error("Seeding failed:", err);
+    console.error("Seeding failed: ", err);
   } finally {
     process.exit();
   }
